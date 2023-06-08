@@ -103,7 +103,6 @@ def shape_transfer_multiple_slices_2D_2D(tgt_pc_list, src_pc_list, m=9, trunc = 
     loss_list = []
     for i in range(len_tgt_pc_list):
         NDP, loss = shape_transfer_2D_2D(tgt_pc_list[i], src_pc_list[i], m=m, trunc = trunc)
-
         NDP_list.append(NDP)
         loss_list.append(loss)
     return NDP_list, loss_list

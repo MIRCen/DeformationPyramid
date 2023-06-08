@@ -1,6 +1,7 @@
 import pandas as pd
 import PIL.Image as Image
 import numpy as np
+import os
 
 
 def get_list_ROI(list_centroids_X, list_centroids_Y, ROI_img, image_size=None):
@@ -60,6 +61,8 @@ def read_image(img_url):
 
 def read_file_info(data_training_info_slices):
     from pandas_ods_reader import read_ods
+
+    test_a=os.path.isfile(data_training_info_slices)
     df = read_ods(data_training_info_slices, 1)
     rotations = df["rotation"].to_numpy()
     slices_numeros = df["numero"].to_numpy()
